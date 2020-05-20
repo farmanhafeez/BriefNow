@@ -1,0 +1,16 @@
+ErrorDocument 404 /BriefNow/404.php
+
+Options +FollowSymLinks
+
+RewriteEngine On
+
+RewriteRule ^post/([^/]+)-([^/]+)-([^/]+)$ blog.php?user=$1&postid=$2&title=$3 [L]
+RewriteRule ^user/([^/]+)$ profile.php?user=$1 [L]
+RewriteRule ^result/([^/]+)$ result.php?search=$1 [L]
+RewriteRule ^blog/category$ category.php [L]
+RewriteRule ^blog/$ blogpost.php [L]
+RewriteRule ^login$ login.php [L]
+RewriteRule ^signup$ signup.php [L]
+RewriteRule ^about/$ about.php [L]
+RewriteRule ^contact/$ contact.php [L]
+RewriteRule ^feedback/$ feedback.php [L]
