@@ -34,7 +34,7 @@ if (!empty($postid) || !empty($title)) {
 		$viewyear = date("Y");
 		$pageviews  = 1;
 
-		/*$visitor_result = mysqli_query($conn, "SELECT * FROM pagevisitor 
+		$visitor_result = mysqli_query($conn, "SELECT * FROM pagevisitor 
 						WHERE blogpostid = '$postid' AND visitorip = '$ip' AND visitordevice = '$device' AND visitorcountry = '$country' 
 						AND visitorbrowser = '$browser' AND visitormonth = '$viewmonth' AND visitoryear = '$viewyear'");
 		if (mysqli_num_rows($visitor_result) > 0) {
@@ -66,7 +66,6 @@ if (!empty($postid) || !empty($title)) {
 
 		//Updating page count
 		mysqli_query($conn, "UPDATE blog SET count = (count+1) WHERE postid='$postid'");
-		*/
 	} else {
 		header('Location: 404.php');
 	}

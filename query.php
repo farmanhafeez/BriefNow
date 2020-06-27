@@ -24,7 +24,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'feedbackresponse') {
 		echo json_encode(["status" => 1, "msg" => '<i class="fas fa-exclamation-circle"></i> All the fields are required']);
 	} elseif (!filter_var($feedemail, FILTER_VALIDATE_EMAIL)) {
 		echo json_encode(["status" => 2, "msg" => '<i class="fas fa-exclamation-circle"></i> All the fields are required']);
-	}  else {
+	} else {
 		$stmt = $conn->prepare("INSERT INTO feedback (feedname, feedemail, feedmessage, experience, feedbackdate) 
 			VALUES (?,?,?,?,?)");
 		$stmt->bind_param("sssss", $feedname, $feedemail, $feedmessage, $experience, $feedbackdate);
